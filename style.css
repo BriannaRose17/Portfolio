@@ -129,22 +129,24 @@ header {
 
 header::before {
   content: "";
-  position: absolute;
+  display: block;       
+  position: relative;
   top: 0;             
   left: 50%;
   transform: translateX(-50%);
   
-  width: 100%;     
-  height: 100%;      
+  width: 100%;        
+  height: 250px;       
   
-  background-image: url('Border.png');
+  background-image: url('border.png'); 
   background-size: contain; 
   background-repeat: no-repeat;
-  background-position: top center;
+  background-position: center top;
   
   z-index: 0; 
   pointer-events: none;
 }
+
 
 }
 
@@ -152,6 +154,7 @@ header h1, header p, header a {
   position: relative; 
   z-index: 1;        
 }
+
 
 
 
