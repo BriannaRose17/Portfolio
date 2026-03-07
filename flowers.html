@@ -9,21 +9,21 @@
         body { font-family: 'Segoe UI', sans-serif; background: var(--bg); display: flex; flex-direction: column; align-items: center; padding: 20px; }
         .container { display: flex; max-width: 1200px; width: 100%; gap: 20px; }
         
-        /* Sidebar */
+  
         .sidebar { width: 320px; background: white; padding: 20px; border-radius: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 1px solid #D1E2D8; display: flex; flex-direction: column; gap: 15px; }
         .section-title { font-size: 0.8rem; font-weight: bold; color: var(--primary); text-transform: uppercase; border-bottom: 1px solid #eee; padding-bottom: 5px; margin-top: 10px; }
         
-        /* Buttons & Grid */
+ 
         .flower-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
         .flower-btn { font-size: 1.5rem; padding: 8px; border-radius: 10px; border: 1px solid #E8F3ED; background: #F9FBF9; cursor: pointer; }
         .controls-box { background: #F9F9F9; padding: 15px; border-radius: 12px; border: 1px solid #EEE; text-align: left; }
         .controls-box label { font-size: 0.7rem; font-weight: bold; display: block; margin-top: 10px; color: #666; }
         select, input[type=range], input[type=color] { width: 100%; margin-top: 5px; cursor: pointer; }
 
-        /* Canvas */
+
         .canvas { flex-grow: 1; height: 750px; background-color: white; border-radius: 25px; position: relative; overflow: hidden; border: 2px solid white; box-shadow: 0 10px 30px rgba(0,0,0,0.05); background-size: cover; background-position: center; background-repeat: no-repeat; }
         
-        /* Vase */
+
         .vase-container { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); width: 200px; z-index: 5; cursor: pointer; transition: width 0.2s; }
         #vasePath { stroke: var(--primary); stroke-width: 2; transition: d 0.5s ease, fill 0.3s; }
 
@@ -41,7 +41,7 @@
     <div class="container">
         <div class="sidebar">
             <div class="section-title">1. Background</div>
-            <!-- The ID must match the JavaScript: id="bgInput" -->
+           
             <input type="file" id="bgInput" accept="image/*" onchange="uploadBG(event)">
             <button onclick="resetBG()" style="padding: 5px; cursor:pointer; margin-top:5px; border-radius:5px; border:1px solid #ddd;">Reset to White</button>
 
@@ -93,7 +93,7 @@
             </div>
         </div>
 
-        <!-- The ID must match the JavaScript: id="canvas" -->
+      
         <div id="canvas" class="canvas">
             <div id="theVase" class="vase-container" onclick="selectItem(event, this, 'Vase')">
                 <svg viewBox="0 0 100 120" style="width:100%">
@@ -107,7 +107,7 @@
         let selectedItem = null;
         let zCounter = 10;
 
-        // FIXED: BACKGROUND LOGIC
+       
         function uploadBG(event) {
             const file = event.target.files[0];
             if (!file) return;
@@ -116,7 +116,7 @@
             reader.onload = function(e) {
                 const canvas = document.getElementById('canvas');
                 canvas.style.backgroundImage = `url('${e.target.result}')`;
-                canvas.style.backgroundColor = "transparent"; // Hide the white base
+                canvas.style.backgroundColor = "transparent"; 
             };
             reader.readAsDataURL(file);
         }
@@ -125,11 +125,11 @@
             const canvas = document.getElementById('canvas');
             canvas.style.backgroundImage = 'none'; 
             canvas.style.backgroundColor = 'white';
-            // Clear the file input so you can upload the same image again if needed
+          
             document.getElementById('bgInput').value = ""; 
         }
 
-        // VASE & STYLING
+
         function changeVase(d) { document.getElementById('vasePath').setAttribute('d', d); }
         function changeVaseColor(c) { document.getElementById('vasePath').setAttribute('fill', c); }
 
@@ -207,6 +207,7 @@
     <script src="floralbuilder.js"></script>
 </body>
 </html>
+
 
 
 
