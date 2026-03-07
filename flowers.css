@@ -1,7 +1,7 @@
-/* --- 1. GLOBAL LAYOUT --- */
+
 :root {
-    --primary: #8EB69B; /* Sage Green */
-    --secondary: #E29595; /* Rose Pink */
+    --primary: #8EB69B; 
+    --secondary: #E29595; 
     --bg: #F8FBF9;
     --white: #ffffff;
     --sidebar-w: 320px;
@@ -26,7 +26,7 @@ body {
     gap: 20px; 
 }
 
-/* --- 2. SIDEBAR STYLING --- */
+
 .sidebar { 
     width: var(--sidebar-w); 
     background: var(--white); 
@@ -50,7 +50,7 @@ body {
     padding-bottom: 5px; 
 }
 
-/* Flower Selection Grid */
+
 .flower-grid { 
     display: grid; 
     grid-template-columns: repeat(4, 1fr); 
@@ -72,7 +72,7 @@ body {
     transform: translateY(-2px); 
 }
 
-/* Controls & Sliders */
+
 .controls-box { 
     background: #F9F9F9; 
     padding: 15px; 
@@ -99,7 +99,7 @@ input[type=range], input[type=color], select {
     border: 1px solid #ddd;
 }
 
-/* Layering & Action Buttons */
+
 .btn-group { display: flex; gap: 5px; margin-top: 10px; }
 
 .util-btn { 
@@ -127,7 +127,7 @@ input[type=range], input[type=color], select {
 .save { background: var(--primary); }
 .clear { background: var(--secondary); }
 
-/* --- 3. CANVAS & VASE --- */
+
 .canvas { 
     flex-grow: 1; 
     height: 800px; 
@@ -140,14 +140,14 @@ input[type=range], input[type=color], select {
     background-position: center; 
 }
 
-/* High-Visibility Vase */
+
 .vase-container { 
     position: absolute; 
     bottom: 40px; 
     left: 50%; 
     transform: translateX(-50%); 
     width: 200px; 
-    z-index: 5; /* Middle layer */
+    z-index: 5; 
     cursor: pointer; 
 }
 
@@ -160,7 +160,7 @@ input[type=range], input[type=color], select {
     stroke-dasharray: 4; 
 }
 
-/* Flower Instances */
+
 .flower-instance { 
     position: absolute; 
     cursor: grab; 
@@ -179,8 +179,9 @@ input[type=range], input[type=color], select {
     background: rgba(142, 182, 155, 0.05);
 }
 
-/* --- 4. EXPORT PREPARATION --- */
+
 @media print { 
     .sidebar, h1, p { display: none; } 
     .canvas { border: none; box-shadow: none; width: 100vw; height: 100vh; } 
 }
+
