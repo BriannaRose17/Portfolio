@@ -1,4 +1,4 @@
-// @ts-nocheck
+
 
 window.onload = () => {
     loadTasks();
@@ -38,14 +38,13 @@ function sortAndRender() {
     const list = document.getElementById('taskList');
     const tasks = Array.from(list.children);
 
-    // FLIP: First
+
     const firstPositions = tasks.map(t => ({ el: t, rect: t.getBoundingClientRect() }));
 
-    // Sort Logic
+
     tasks.sort((a, b) => b.getAttribute('data-priority') - a.getAttribute('data-priority'));
     tasks.forEach(t => list.appendChild(t));
 
-    // FLIP: Last/Invert/Play
     tasks.forEach(task => {
         const first = firstPositions.find(p => p.el === task).rect;
         const last = task.getBoundingClientRect();
@@ -114,6 +113,7 @@ function loadTasks() {
         list.appendChild(li);
     });
 }
+
 
 
 
