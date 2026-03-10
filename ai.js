@@ -16,7 +16,7 @@ function queryAI() {
         "My internal sensors say: Not likely. 🤖",
         "Ask me again after I've had some digital coffee. ☕",
         "That's a fascinating thought! 🧠",
-        "Error 404: Answer not found in this dimension. 🌌"
+        "Error 404: Answer not found in this dimension. 🌌",
         "Octopuses have three hearts and blue blood. 🐙",
         "A group of flamingos is called a 'flamboyance.' 🦩",
         "Shrimp have their hearts located in their heads. 🦐",
@@ -37,8 +37,8 @@ function queryAI() {
         "Apples float in water because they are 25% air. 🍎",
         "Strawberries are the only fruit that carries its seeds on the outside. 🍓",
         "Ketchup was once sold as medicine in the 1830s. 🍅",
-        "McDonald's once created bubblegum-flavored broccoli to help kids eat veggies. 🥦"
-        "The world's longest French fry was 34 inches long. 🍟"
+        "McDonald's once created bubblegum-flavored broccoli to help kids eat veggies. 🥦",
+        "The world's longest French fry was 34 inches long. 🍟",
         "Your brain uses about 20% of your body's total energy. 🧠",
         "The human nose can remember 50,000 different scents. 👃",
         "Human teeth are as strong as shark teeth, just not as sharp. 🦷",
@@ -88,3 +88,4 @@ function typeWriter(text, className) {
     }
     type();
 }
+
