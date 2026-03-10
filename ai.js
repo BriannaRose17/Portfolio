@@ -93,7 +93,7 @@ function queryAI() {
         "Sloths only poop once a week, and it’s a major physical event for them. 🦥",
         "The driest place on Earth is actually in Antarctica, in an area called the Dry Valleys. ❄️",
         "The King of Hearts is the only king in a deck of cards without a mustache. 🤴",
-        "Blueberries don't actually turn blue until they are picked and sit for a while. 🫐"
+        "Blueberries don't actually turn blue until they are picked and sit for a while. 🫐",
     ];
 
     const randomResponse = responses[Math.floor(Math.random() * responses.length)];
@@ -116,6 +116,16 @@ function addMessageToChat(text, className) {
     responseArea.appendChild(messageDiv);
     responseArea.scrollTop = responseArea.scrollHeight;
 }
+function getRandomFact() {
+
+    const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+
+    addMessageToChat("Surprise me with a fact! 🎲", 'user-msg');
+
+    setTimeout(() => {
+        typeWriter(randomResponse, 'bot-msg');
+    }, 600);
+}
 
 
 function typeWriter(text, className) {
@@ -137,5 +147,6 @@ function typeWriter(text, className) {
     }
     type();
 }
+
 
 
