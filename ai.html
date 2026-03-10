@@ -1,24 +1,32 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <body><a href="Project.html" class="back-btn">← Back to Projects</a></body>
-    <main class="ai-container">
-    <header class="ai-header">
-        <h2>Second Brain</h2>
-        <p>Ask me to summarize, research, or guide your wellness journey.</p>
-    </header>
-<link rel="stylesheet" href="ai.css">
-    
-    <div id="aiResponseArea" class="ai-chat-window">
-        <div class="bot-msg">Hello! I'm your Second Brain. What are we exploring today?</div>
-    </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Second Brain</title>
+    <link rel="stylesheet" href="ai.css">
+</head>
+<body>
 
-   
-    <div class="ai-input-wrapper">
-        <textarea id="aiPrompt" placeholder="Paste a long article or ask a health question..."></textarea>
-        <button id="askBtn" onclick="queryAI()">Consult Brain ✨</button>
-    </div>
+    <a href="Project.html" class="back-btn">← Back to Projects</a>
+
+    <main class="ai-container">
+        <header class="ai-header">
+            <h2>Second Brain</h2>
+            <p>Access the world's most bizarre and fascinating data points.</p>
+        </header>
+
+        <div id="aiResponseArea" class="ai-chat-window"></div>
+
+        <div class="ai-input-wrapper">
+            <textarea id="aiPrompt" placeholder="Type 'Give me a fact' or 'Tell me something weird'..."></textarea>
+            <button id="askBtn" onclick="queryAI()">Consult Brain ✨</button>
+        </div>
+    </main>
+
     <script src="ai.js"></script>
-</main>
+</body>
+</html>
 
 
 
