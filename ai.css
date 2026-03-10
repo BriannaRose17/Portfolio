@@ -4,16 +4,19 @@
     padding: 30px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     max-width: 600px;
+    margin: 20px auto; 
 }
 
 .ai-chat-window {
-    height: 300px;
+    height: 350px; 
     overflow-y: auto;
     background: white;
     border-radius: 15px;
     padding: 20px;
     margin-bottom: 20px;
     border: 1px solid #D1E2D8; 
+    display: flex; 
+    flex-direction: column;
 }
 
 textarea {
@@ -21,9 +24,10 @@ textarea {
     height: 80px;
     border-radius: 12px;
     border: 2px solid #8EB69B;
-    padding: 10px;
+    padding: 15px;
     font-family: inherit;
     resize: none;
+    box-sizing: border-box; 
 }
 
 #askBtn {
@@ -36,32 +40,54 @@ textarea {
     font-weight: bold;
     cursor: pointer;
     margin-top: 10px;
+    transition: background 0.3s;
 }
-.bot-msg {
-    background: #E8F3ED; 
+
+#askBtn:hover {
+    background: #7aa188;
+}
+
+
+.msg {
+    max-width: 80%;
     padding: 15px;
-    border-radius: 15px 15px 15px 0px;
     margin-bottom: 15px;
-    color: #2D3A30;
-    border-left: 4px solid #8EB69B;
     font-size: 0.95rem;
     line-height: 1.5;
     animation: fadeIn 0.4s ease;
+}
+
+.bot-msg {
+    background: #E8F3ED; 
+    border-radius: 15px 15px 15px 0px;
+    color: #2D3A30;
+    border-left: 4px solid #8EB69B;
+    align-self: flex-start;
+}
+
+
+.user-msg {
+    background: #8EB69B; 
+    color: white;
+    border-radius: 15px 15px 0px 15px;
+    align-self: flex-end; 
+    text-align: right;
 }
 
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
 .back-btn {
-  align-self: flex-start; 
+  display: inline-block;
   background-color: transparent !important;
   color: #8A9A5B !important;
   font-weight: bold;
-  padding: 10px 20px;
+  padding: 10px 0;
   text-decoration: none;
   transition: 0.3s;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 
