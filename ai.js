@@ -84,66 +84,66 @@
     ];
 
 window.onload = () => {
-    typeWriter("Greetings! I am the Cosmic Brain. Ask me anything to receive a fragment of universal truth! ✨", 'bot-msg');
+    setTimeout(() => {
+        typeWriter("Greetings! I am the Cosmic Brain. Ask me anything or click 'Surprise Me'! ✨", 'bot-msg');
+    }, 100);
 };
 
+// 3. MAIN FUNCTIONS
 function queryAI() {
     const promptInput = document.getElementById('aiPrompt');
     const btn = document.getElementById('askBtn');
-
     if (!promptInput || !promptInput.value.trim()) return;
 
-    const userText = promptInput.value;
-    addMessageToChat(userText, 'user-msg'); 
-
-    const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+    addMessageToChat(promptInput.value, 'user-msg');
+    const fact = responses[Math.floor(Math.random() * responses.length)];
 
     promptInput.value = "";
     btn.innerText = "Thinking...";
 
     setTimeout(() => {
-        typeWriter(randomResponse, 'bot-msg');
+        typeWriter(fact, 'bot-msg');
         btn.innerText = "Consult Brain ✨";
-    }, 600); 
+    }, 600);
 }
 
 function getRandomFact() {
-    const randomResponse = responses[Math.floor(Math.random() * responses.length)];
-    addMessageToChat("Surprise me with a fact! 🎲", 'user-msg');
-
+    const fact = responses[Math.floor(Math.random() * responses.length)];
+    addMessageToChat("Surprise me! 🎲", 'user-msg');
     setTimeout(() => {
-        typeWriter(randomResponse, 'bot-msg');
+        typeWriter(fact, 'bot-msg');
     }, 600);
 }
 
 function addMessageToChat(text, className) {
-    const responseArea = document.getElementById('aiResponseArea');
-    const messageDiv = document.createElement('div');
-    messageDiv.className = `msg ${className}`;
-    messageDiv.innerText = text;
-    responseArea.appendChild(messageDiv);
-    responseArea.scrollTop = responseArea.scrollHeight;
+    const area = document.getElementById('aiResponseArea');
+    if (!area) return;
+    const div = document.createElement('div');
+    div.className = `msg ${className}`;
+    div.innerText = text;
+    area.appendChild(div);
+    area.scrollTop = area.scrollHeight;
 }
 
 function typeWriter(text, className) {
-    const responseArea = document.getElementById('aiResponseArea');
-    const messageDiv = document.createElement('div');
-    messageDiv.className = `msg ${className}`;
-    responseArea.appendChild(messageDiv);
+    const area = document.getElementById('aiResponseArea');
+    if (!area) return;
+    const div = document.createElement('div');
+    div.className = `msg ${className}`;
+    area.appendChild(div);
     
     let i = 0;
-    const speed = 30; 
-
     function type() {
         if (i < text.length) {
-            messageDiv.innerHTML += text.charAt(i);
+            div.innerHTML += text.charAt(i);
             i++;
-            responseArea.scrollTop = responseArea.scrollHeight;
-            setTimeout(type, speed);
+            area.scrollTop = area.scrollHeight;
+            setTimeout(type, 30);
         }
     }
     type();
 }
+
 
 
 
